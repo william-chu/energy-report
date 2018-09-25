@@ -1,0 +1,24 @@
+.navigation-container button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  background: white;
+  color: #2b2b2b;
+  border: 2px solid #2b2b2b;
+  border-radius: 5px;
+  transition: .5s;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: bold;
+}
+
+.navigation-container button:hover, .navigation-container button:focus {
+  background: #2b2b2b;
+  color: white;
+}
+
+.navigation-container h1 {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  color: #2b2b2b;
+}
