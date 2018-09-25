@@ -25,6 +25,9 @@ Transform a month of hourly weather data to calculate how many times the air-con
 * To view project code clone repository from https://github.com/william-chu/energy-report
 * Install Node.js https://nodejs.org/en/
 * Open terminal, navigate to project root folder and run `npm install`
+* Sign up for Dark Sky API from https://darksky.net/dev
+* Create a file named `.env` in the project root folder
+* Add this to .env and save `REACT_APP_DARK_SKY_API_KEY=[your-dark-sky-api-key]`
 * To bundle and build project distribution folder, run `npm run build`
 * To view project in development mode, run `npm start`
 
