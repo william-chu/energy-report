@@ -1,0 +1,41 @@
+.report-container {
+  padding: 30px 0;
+  background-color: lightgray;
+  margin-top: 30px;
+}
+
+.report-container .fa-fire {
+  color: orange;
+}
+
+.report-container .fa-snowflake {
+  color: blue;
+}
+
+.report-container h2 {
+  text-align: center;
+  font-weight: lighter;
+  color: #4c4c4c;
+}
+
+.report-container-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 0 30px;
+}
+
+.report-container .calendar-day {
+  background: white;
+  border-radius: 5px;
+  height: 100px;
+}
+
+.report-container .calendar-day-flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.report-container .calendar-day-flex i {
+  font-size: 26px;
+}

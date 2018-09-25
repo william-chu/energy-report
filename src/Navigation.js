@@ -5,7 +5,6 @@ function Navigation(props) {
 
   function handleMonthChange(month) {
     props.onMonthChange(month);
-    console.log('triggered');
   }
 
   return(
@@ -15,7 +14,7 @@ function Navigation(props) {
       <button onClick={handleMonthChange.bind(this, 'mar')}>Mar</button>
       <button onClick={handleMonthChange.bind(this, 'may')}>May</button>
     </div>
-  )
+  );
 }
 
 export default Navigation;
