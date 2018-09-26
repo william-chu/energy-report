@@ -1,5 +1,5 @@
 .report-container {
-  padding: 30px 0;
+  padding: 20px 0;
   background-color: lightgray;
   margin-top: 30px;
 }
@@ -16,6 +16,7 @@
   text-align: center;
   font-weight: lighter;
   color: #4c4c4c;
+  font-size: 1.4rem;
 }
 
 .report-container-grid{
@@ -23,6 +24,8 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   padding: 0 30px;
+  max-width: 1080px;
+  margin: auto;
 }
 
 .report-container .calendar-day {

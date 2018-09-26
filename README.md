@@ -31,7 +31,12 @@ Transform a month of hourly weather data to calculate how many times the air-con
 * To bundle and build project distribution folder, run `npm run build`
 * To view project in development mode, run `npm start`
 
+## Screenshot
+![HVAC Report](https://raw.githubusercontent.com/william-chu/energy-report/master/screenshot.png)
+
 ## Known Bugs
+* Clicking quickly sometimes results in more days than exist in a month
+* Want to add default button active on page load to month of January
 
 ## Technologies Used
 
