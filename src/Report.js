@@ -6,8 +6,8 @@ function Report(props) {
   let ACUsedCount = props.ACUsedArr.filter(Boolean).length;
   return (
     <div className="report-container">
-      <h2><i className="fal fa-fire"></i> Heat was turned on {heatUsedCount} times this month</h2>
-      <h2><i className="fal fa-snowflake"></i> AC was turned on {ACUsedCount} times this month</h2>
+      <h2><i className="fal fa-fire"></i> Heat used {heatUsedCount} times this month (below 62 F)</h2>
+      <h2><i className="fal fa-snowflake"></i> AC was used {ACUsedCount} times this month (above 75 F)</h2>
       <h2>View By Day:</h2>
       <div className="report-container-grid">
         {props.heatUsedArr.map((item, index) => {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import Navigation from './Navigation';
 import Report from './Report';
@@ -11,24 +11,35 @@ class App extends Component {
       ACUsedArr: [],
       heatUsedArr: [],
       monthReportStart: 1514764800,
+      monthDayLength: 31,
     };
   }
 
   handleMonthChange = (month) => {
+    // Unix timestamps, each day is 86400
     const jan2018Start = 1514764800;
-    const feb2018Start = ;
+    const feb2018Start = 1517443200;
     const mar2018Start = 1519862400;
-    const apr2018Start = ;
+    const apr2018Start = 1522540800;
     const may2018Start = 1525132800;
     this.setState({ACUsedArr: []});
     this.setState({heatUsedArr: []});
     let newMonthReportStart;
     if (month === 'jan') {
       newMonthReportStart = jan2018Start;
+      this.setState({monthDayLength: 31});
+    } else if (month === 'feb') {
+      newMonthReportStart = feb2018Start;
+      this.setState({monthDayLength: 28});
     } else if (month === 'mar') {
       newMonthReportStart = mar2018Start;
+      this.setState({monthDayLength: 31});
+    } else if (month === 'apr') {
+      newMonthReportStart = apr2018Start;
+      this.setState({monthDayLength: 30});
     } else {
       newMonthReportStart = may2018Start;
+      this.setState({monthDayLength: 31});
     }
     this.setState(
       {
@@ -39,8 +50,6 @@ class App extends Component {
   }
 
   darkSkyApi = () => {
-    // Unix timestamps, each day is 86400
-    const monthDayLength = 31;
     const position = {
       latitude: 45.5898,
       longitude: -122.5951
@@ -48,7 +57,7 @@ class App extends Component {
     const acTemp = 75;
     const heatTemp = 62;
     let darkSkyURL = '';
-    for (let i = 0; i < monthDayLength; i++ ){
+    for (let i = 0; i < this.state.monthDayLength; i++ ){
       const proxy = 'https://cors-anywhere.herokuapp.com/';
       let dateTimeStamp = this.state.monthReportStart + (i * 86400);
       darkSkyURL = proxy + 'https://api.darksky.net/forecast/' + process.env.REACT_APP_DARK_SKY_API_KEY + '/' + position.latitude + ',' + position.longitude + ',' + dateTimeStamp + "?exclude=currently,minutely,daily,alerts,flag";
@@ -87,7 +96,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Energy Report</h1>
+          <h1 className="App-title">HVAC Report</h1>
         </header>
         <Navigation onMonthChange={this.handleMonthChange} />
         <Report ACUsedArr={this.state.ACUsedArr} heatUsedArr={this.state.heatUsedArr} />
